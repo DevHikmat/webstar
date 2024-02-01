@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Webstar</title>
+  </head>
+  <body>
+    <!-- component -->
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <div class="">
+      <div class="antialiased bg-gray-100 dark-mode:bg-gray-900 border-b">
+        <div
+          class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800"
+        >
+          <div
+            x-data="{ open: false }"
+            class="flex flex-col container md:items-center md:justify-between md:flex-row"
+          >
+            <div class="flex flex-row items-center justify-between py-4">
+              <a
+                href="#"
+                class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline"
+                >Webstar</a
+              >
+              <button
+                class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+                @click="open = !open"
+              >
+                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                  <path
+                    x-show="!open"
+                    fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path
+                    x-show="open"
+                    fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+            <nav
+              :class="{'flex': open, 'hidden': !open}"
+              class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row"
+            >
+              <a
+                class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="#result"
+                >Natijalar</a
+              >
+              <a
+                class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="#contact"
+                >Aloqa</a
+              >
+              <a
+                class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                href="#consultation"
+                >Bepul konsultatsiya</a
+              >
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="py-20">
+      <div
+        class="container md:gap-4 flex flex-col md:flex-row items-start justify-between w-full"
+      >
+        <div
+          class="p-8 h-[372px] mb-8 md:mb-0 bg-[#f3ebdf] rounded-2xl w-full md:w-7/12"
+        >
+          <h2 class="md:text-5xl text-3xl text-[#967851] font-bold mb-4">
+            8 oy ichida talabgir va daromadli mutaxassis bo‘ling!
+          </h2>
+          <p class="text-[#967851] font-medium text-xl md:text-2xl">
+            "Webstar”da dasturlash va ingliz tili yo‘nalishlarini 8 oydan 15
+            oygacha bo‘lgan muddatda o‘rganib, bozorda talabgir kasb egasi
+            bo‘ling.
+          </p>
+        </div>
+        <form
+          class="p-8 h-[372px] form bg-[#f9faf3] md:w-[500px] w-full rounded-2xl flex flex-col"
+        >
+          <h3 class="text-4xl text-[#142033] font-bold mb-2">
+            Bepul konsultatsiya
+          </h3>
+          <p class="mb-2">
+            Telefon raqamingizni yozib qoldiring, biz sizga qoʻngʻiroq qilamiz
+            va birorta ham savolingiz javobsiz qolmasligiga harakat qilamiz
+          </p>
+          <input
+            required
+            name="name"
+            id="name"
+            class="mb-3 px-4 py-3 rounded-lg border"
+            type="text"
+            placeholder="Ismingiz"
+          />
+          <input
+            required
+            name="phone"
+            id="phone"
+            class="mb-3 px-4 py-3 rounded-lg border"
+            type="tel"
+            value="+998"
+            placeholder="+998"
+          />
+          <button
+            class="w-full p-4 button bg-[#0fa97b] text-white rounded-lg border-none cursor-pointer"
+          >
+            So'rov yuborish
+          </button>
+        </form>
+      </div>
+    </section>
+    <section class="pb-20">
+      <div class="container">
+        <h2 class="md:text-5xl text-3xl text-[#142033] font-bold mb-8">
+          "Webstar" bu -
+        </h2>
+        <ul
+          class="list-none grid grid-rows-3 md:grid-rows-1 grid-flow-col gap-4"
+        >
+          <li class="p-6 bg-[#f9fafb] rounded-lg">
+            <img class="mb-3" src="./images/icon-1.svg" alt="" />
+            <p class="text-[#667085]">
+              Dasturlash va ingliz tili kabi zamonaviy kasblar o‘rgatiladigan
+              markaz.
+            </p>
+          </li>
+          <li class="p-6 bg-[#f9fafb] rounded-lg">
+            <img class="mb-3" src="./images/icon-2.svg" alt="" />
+            <p class="text-[#667085]">
+              Zamonaviy kasblar yordamida insonlar hayotini yaxshilovchi va
+              kelajakka bo‘lgan ishonchni mustahkamlovchi maskan.
+            </p>
+          </li>
+          <li class="p-6 bg-[#f9fafb] rounded-lg">
+            <img class="mb-3" src="./images/icon-3.svg" alt="" />
+            <p class="text-[#667085]">
+              Har bir dars videoga olib boriladi va barcha darslarni qaytadan
+              ko'rish imkoniyatiga ega bo'lasiz.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="pb-20" id="result">
+      <div class="container">
+        <h2 class="md:text-5xl text-3xl text-[#142033] font-bold mb-16">
+          "Webstar" natijalari raqamlarda
+        </h2>
+        <ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <li
+            class="p-6 h-[338px] bg-[#f9fafb] rounded-3xl bg-[url('./images/studentCap2.png')] bg-left-bottom bg-no-repeat bg-[length:180px_180px]"
+          >
+            <p class="text-5xl text-[#142033] font-bold mb-3">400+</p>
+            <p class="text-[#667085] text-lg">
+              Shu kungacha bitirgan o'quvchilar
+            </p>
+          </li>
+          <li
+            class="p-6 h-[338px] bg-[#f9fafb] rounded-3xl bg-[url('./images/studentPortfel2.png')] bg-left-bottom bg-no-repeat bg-[length:180px_180px]"
+          >
+            <p class="text-5xl text-[#142033] font-bold mb-3">800 o'quvchi</p>
+            <p class="text-[#667085] text-lg">
+              Bir vaqtning o‘zida 800 ta o'quvchini o'qitish imkoniyatini
+              beruvchi maskan.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="pb-24">
+      <div class="container">
+        <h2 class="md:text-5xl text-3xl text-[#142033] font-bold mb-16">
+          Nima uchun “Webstar”da o‘qish kerak?
+        </h2>
+
+        <ul class="grid md:grid-cols-2 gap-6">
+          <li class="bg-[#f3f8ff] p-8 rounded-3xl md:h-[236px]">
+            <img
+              src="images/education-fill.svg"
+              alt=""
+              class="mb-4"
+              width="48"
+              height="48"
+            />
+            <p class="font-semibold text-2xl text-[#101828] mb-4">
+              Sifatli ta'lim
+            </p>
+            <p class="text-lg text-[#667085]">
+              Doimiy yangilanib boradigan kurslar va katta tajribaga ega
+              ustozlar.
+            </p>
+          </li>
+          <li class="bg-[#f3f8ff] p-8 rounded-3xl md:h-[236px]">
+            <img
+              src="images/challenges.svg"
+              alt=""
+              class="mb-4"
+              width="48"
+              height="48"
+            />
+            <p class="font-semibold text-2xl text-[#101828] mb-4">
+              Doimiy musobaqalar
+            </p>
+            <p class="text-lg text-[#667085]">
+              Dasturlash va ingliz tili bo‘yicha oylik musobaqalar
+            </p>
+          </li>
+          <li class="bg-[#f3f8ff] p-8 rounded-3xl md:h-[236px]">
+            <img
+              src="images/certificate.svg"
+              alt=""
+              class="mb-4"
+              width="48"
+              height="48"
+            />
+            <p class="font-semibold text-2xl text-[#101828] mb-4">Sertifikat</p>
+            <p class="text-lg text-[#667085]">
+              Kursni muvaffaqiyatli tamomlagan o‘quvchilar “Webstar”ning
+              sertifikatiga ega bo‘ladi.
+            </p>
+          </li>
+          <li class="bg-[#f3f8ff] p-8 rounded-3xl md:h-[236px]">
+            <img
+              src="images/free-coworking.svg"
+              alt=""
+              class="mb-4"
+              width="48"
+              height="48"
+            />
+            <p class="font-semibold text-2xl text-[#101828] mb-4">
+              Bepul co-working
+            </p>
+            <p class="text-lg text-[#667085]">Bepul co-working va wifi.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="py-20">
+      <div
+        class="container md:gap-4 flex flex-col md:flex-row items-start justify-between w-full"
+      >
+        <div
+          class="p-8 h-[372px] mb-8 md:mb-0 bg-[#f3ebdf] rounded-2xl w-full md:w-7/12"
+        >
+          <h2 class="md:text-5xl text-3xl text-[#967851] font-bold mb-4">
+            Kelajak kasblarini biz bilan o‘rganing!
+          </h2>
+          <p class="text-[#967851] font-medium text-xl md:text-2xl">
+            Hozirgi kunda istalgan biznes va startupning rivojlanishi uchun
+            dasturchilar muhim mutaxassislardan biri hisoblanadi. Shuning uchun
+            ham ushbu sohada talab doimiy tarzda o‘sib bormoqda.
+          </p>
+        </div>
+        <form
+          id="consultation"
+          class="p-8 h-[372px] form bg-[#f9faf3] md:w-[500px] w-full rounded-2xl flex flex-col"
+        >
+          <h3 class="text-4xl text-[#142033] font-bold mb-2">
+            Bepul konsultatsiya
+          </h3>
+          <p class="mb-2">
+            Telefon raqamingizni yozib qoldiring, biz sizga qoʻngʻiroq qilamiz
+            va birorta ham savolingiz javobsiz qolmasligiga harakat qilamiz
+          </p>
+          <input
+            required
+            name="name"
+            id="name"
+            class="mb-3 px-4 py-3 rounded-lg border"
+            type="text"
+            placeholder="Ismingiz"
+          />
+          <input
+            class="mb-3 px-4 py-3 rounded-lg border"
+            type="tel"
+            value="+998"
+            placeholder="+998"
+          />
+          <button
+            class="w-full p-4 bg-[#0fa97b] text-white rounded-lg border-none cursor-pointer"
+          >
+            So'rov yuborish
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="pb-24">
+      <div class="container">
+        <h2 class="md:text-5xl text-3xl text-[#142033] font-bold mb-16">
+          Bizning manzil
+        </h2>
+        <div class="flex justify-between gap-6">
+          <div>
+            <iframe
+              class="w-[842px] h-[712px] rounded-3xl"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d551.0495850298454!2d69.21717490513865!3d41.34899684684764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suz!2s!4v1705567873266!5m2!1suz!2s"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="border p-6 w-[389px] rounded-3xl">
+            <p class="text-2xl font-semibold mb-4 text-[#2a3040]">Toshkent</p>
+            <img
+              class="mb-3"
+              src="images/webstar-street.jpeg"
+              alt=""
+              width="340"
+              height="170"
+            />
+            <p
+              class="text-lg text-[#2a3040] border-b"
+              style="padding-bottom: 20px"
+            >
+              Olmazor tumani, Umid tor ko'chasi 74/2
+            </p>
+            <div class="py-3 border-b">
+              <p class="text-[#667085] mb-2">Mo'ljal</p>
+              <p class="text-lg text-[#2a3040]">Asia supermarket</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      id="contact"
+      class="bg-[#f9fafb]"
+      style="padding-top: 64px; padding-bottom: 64px"
+    >
+      <div class="container flex items-start justify-between">
+        <div>
+          <p class="text-[#98a2b3]">
+            © “Webstar”, 2024 - Barcha huquqlar himoyalangan.
+          </p>
+        </div>
+        <a href="tel:+998951234000" class="text-[#667085]"
+          >Call-markaz: +998 95 123 4000</a
+        >
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
